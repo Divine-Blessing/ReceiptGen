@@ -1,0 +1,10 @@
+/* IMPORT FONT */
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --base: #773F1A;
+    --white-shade: #F5F5DC;
+}
