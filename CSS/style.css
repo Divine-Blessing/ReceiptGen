@@ -3,8 +3,162 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 :root{
-    --base: #773F1A;
     --white-shade: #F5F5DC;
+    --base: #773F1A;
+    --darkest: #7d5a50;
+    --semi-darkest: #a4907c;
+    --lightest: #fcdec0;
+    --blue: #a5daf7;
+}
+#header{
+    min-height: 10vh;
+    border-bottom: 2px solid black;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#header button.menu{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    z-index: 1;
+    cursor: pointer;
+}
+/* #header button.menu[aria-expanded="true"]{
+    background-image: ;
+} */
+#header div.links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    padding: 170px 0 0 0;
+    background-color: var(--base);
+    position: fixed;
+    inset: 0 0 0 0;
+    transform: translateX(100%);
+    transition: transform 450ms ease-in-out;
+}
+#header div.links[data-visible="true"]{
+    transform: translateX(0%);
+}
+#header div.links a{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+    color: var(--white-shade);
+    /* color: var(--lightest); */
+    position: relative;
+}
+#header div.links a:nth-child(even){
+    margin: 25px 0;
+}
+#header div.links a::after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: var(--blue);
+    transform: scaleX(0);
+    transition: transform 250ms ease;
+}
+#header div.links a:hover::after{
+    transform: scaleX(1);
+}
+#header div.links a:hover{
+    color: var(--blue);
+    /* color: var(--lightest); */
+}
+#header div.links a:nth-child(5){
+    border: 3px solid var(--white-shade);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 
+    inset 1px 2px 15px rgba(0, 0, 0, 0.3),
+    inset 0px 2px 15px rgba(0, 0, 0, 0.3);
+}
+#header div.links a:nth-child(5):hover{
+    background-color: var(--blue);
+    color: var(--base);
+    border: 3px solid var(--blue);
+    box-shadow: 
+    inset 1px 2px 15px rgba(0, 0, 0, 0.3),
+    inset 0px 2px 15px rgba(0, 0, 0, 0.3),
+    1px 2px 15px rgba(0, 0, 0, 0.4),
+    1px 2px 15px rgba(0, 0, 0, 0.4);
+}
+#header div.links a:nth-child(5)::after{
+    height: 0;
+}
+/* 
+#navbar button{
+    background-image: url(../img/hamburger-open.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 20px;
+    width: 100px;
+    position: absolute;
+    top: 55px;
+    right: 35px;
+}
+#navbar button[aria-expanded="true"]{
+    background-image: url(../img/icons8-x-80\ 1.png);
+    height: 50px;
+    width: 120px;
+    top: 40px;
+    right: 10px;
+}
+.links{
+    position: fixed;
+    padding: 160px 0 0 0;
+    inset: 0 0 0 80%;
+    background-color: transparent;
+    transform: translateX(100%);
+    transition: transform 350ms ease-in;
+}
+*/
+
+section#hero{
+    min-height: 100vh;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+section#hero h1{
+    font-size: 35px;
+}
+section#hero > p{
+    margin: 2rem 0;
+}
+section#hero a.gen{
+    text-decoration: none;
+    color: var(--white-shade);
+    background-color: var(--base);
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    padding: 13px 22px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 400ms ease-in-out;
+}
+section#hero a.gen::before, section#hero a.gen::after{
+    position: absolute;
+    content: '';
+    z-index: -1;
+}
+section#hero a.gen:hover, section#hero a.gen:active{
+    box-shadow: 
+    inset -10.5em 0 0 0 var(--blue),
+    inset 10.5em 0 0 0 var(--blue);
+    background-color: var(--darkest);
+    /* color: var(--base); */
 }

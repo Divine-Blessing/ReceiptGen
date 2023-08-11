@@ -1,0 +1,15 @@
+/* IMPORT FONT */
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+:root{
+    --white-shade: #F5F5DC;
+    --base: #773F1A;
+    --darkest: #7d5a50;
+    --semi-darkest: #a4907c;
+    --lightest: #fcdec0;
+    --blue: #a5daf7;
+}
